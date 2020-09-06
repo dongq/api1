@@ -1,0 +1,24 @@
+logging:
+  level:
+    root: warn
+    com.rest.api: debug
+  path: D:\sprintboot\log
+  file:
+    max-history: 7
+
+spring:
+  profiles: mysql
+  datasource:
+    url: jdbc:mysql://localhost:3306/ats?serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ats
+    password: Welcome1
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties.hibernate:
+      hbm2ddl.auto: update
+      format_sql: true
+    showSql: true
+    generate-ddl: true
+  url:
+    base: http://localhost:8080

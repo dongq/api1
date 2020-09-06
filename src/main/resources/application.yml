@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: local
+  messages:
+    basename: i18n/exception
+    encoding: UTF-8
+  jwt:
+    secret : govlepel@$&
+  social:
+    kakao:
+      client_id: 6f893008b93f32950a1897f33e2b1b3d
+      redirect: /social/login/kakao
+      url:
+        login: https://kauth.kakao.com/oauth/authorize
+        token: https://kauth.kakao.com/oauth/token
+        profile: https://kapi.kakao.com/v2/user/me
+
