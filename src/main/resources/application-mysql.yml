@@ -2,9 +2,20 @@ logging:
   level:
     root: warn
     com.rest.api: debug
-  path: D:\sprintboot\log
+  path: /home/vagrant/work/api1/log
   file:
     max-history: 7
+
+server:
+  tomcat:
+    basedir: /home/vagrant/work/api1/tomcatlog
+    accesslog:
+      enabled: true
+      pattern: "%t %a %s \"%r\" %b (%D ms)"
+      directory: log
+      suffix: .log
+      prefix: access
+
 
 spring:
   profiles: mysql
@@ -21,4 +32,4 @@ spring:
     showSql: true
     generate-ddl: true
   url:
-    base: http://localhost:8080
+    base: http://localhost:8083
