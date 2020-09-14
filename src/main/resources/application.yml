@@ -14,4 +14,8 @@ spring:
         login: https://kauth.kakao.com/oauth/authorize
         token: https://kauth.kakao.com/oauth/token
         profile: https://kapi.kakao.com/v2/user/me
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
