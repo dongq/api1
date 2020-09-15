@@ -20,7 +20,7 @@ server:
 spring:
   profiles: mysql
   datasource:
-    url: jdbc:mysql://192.168.1.100:3306/ats?allowPublicKeyRetrieval=true?serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://192.168.1.100:3306/ats?allowPublicKeyRetrieval=TRUE&serverTimezone=UTC&useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ats
     password: Welcome1
