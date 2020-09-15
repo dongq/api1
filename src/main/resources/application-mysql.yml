@@ -32,4 +32,4 @@ spring:
     showSql: true
     generate-ddl: true
   url:
-    base: http://localhost:8083
+    base: http://127.0.0.1:8083
