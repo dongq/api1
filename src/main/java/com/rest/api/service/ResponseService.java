@@ -3,8 +3,6 @@ package com.rest.api.service;
 import com.rest.api.model.response.CommonResult;
 import com.rest.api.model.response.ListResult;
 import com.rest.api.model.response.SingleResult;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

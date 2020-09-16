@@ -53,6 +53,19 @@ public class ExceptionAdvice {
     public CommonResult authenticationEntryPointException(HttpServletRequest request, CAuthenticationEntryPointException e){
         return responseService.getFailResult(Integer.valueOf(getMessage("entryPointException.code")), getMessage("entryPointException.msg"));
     }
+
+    @ExceptionHandler(CNotOwnerException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    protected CommonResult notOwnerException(HttpServletRequest request, CNotOwnerException e){
+        return responseService.getFailResult(Integer.valueOf(getMessage("notOwner.code")), getMessage("notOwner.msg"));
+    }
+
+    @ExceptionHandler(CResourceNotExistException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    protected CommonResult resourceNotExistException(HttpServletRequest request, CResourceNotExistException e){
+        return responseService.getFailResult(Integer.valueOf(getMessage("resourceNotExist.code")), getMessage("resourceNotExist.msg"));
+    }
+
     private String getMessage(String code){
         return getMessage(code, null);
     }
@@ -60,15 +73,4 @@ public class ExceptionAdvice {
     private String getMessage(String code, Object[] args){
         return messageSource.getMessage(code, args, LocaleContextHolder.getLocale());
     }
-
-
-
-
-//   @ExceptionHandler(Exception.class)
-//   @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-//   protected CommonResult defaultException(HttpServletRequest request, Exception e){
-//       return responseService.getFailResult();
-//   }
-
-
 }
