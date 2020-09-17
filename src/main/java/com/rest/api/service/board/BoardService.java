@@ -27,7 +27,9 @@ public class BoardService {
 
     // 게시판 이름으로 게시판을 조회, 없을 경우 CResourceNotExistException 처리
     public Board findBoard(String boardName){
+        //return Optional.ofNullable(boardJpaRepo.findByName(boardName)).orElseThrow(CResourceNotExistException::new);
         return Optional.ofNullable(boardJpaRepo.findByName(boardName)).orElseThrow(CResourceNotExistException::new);
+
     }
 
     // 게시판 이름으로 게시물 리스트 조회.

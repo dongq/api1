@@ -32,6 +32,7 @@ public class SecurityConfiguration  extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/*/signin", "/*/signin/**", "/*/signup", "/*/signup/**", "/social/**").permitAll()
                 .antMatchers(HttpMethod.GET, "helloworld/**", "/actuator/**").permitAll()
+                .antMatchers("/*/board/**").permitAll()
                 .anyRequest().hasRole("USER")
                 .and()
                 .exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint())
